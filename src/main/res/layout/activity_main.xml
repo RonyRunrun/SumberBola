@@ -7,17 +7,6 @@
     android:layout_height="match_parent"
     tools:context="com.oktagon.sumberbola.sumberbola.MainActivity">
 
-    <android.support.design.widget.NavigationView
-        android:id="@+id/navigation"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/view_nav_header"
-        app:itemTextColor="#333"
-        app:itemIconTint="#333"
-        app:menu="@menu/menu_nav_items"
-        ></android.support.design.widget.NavigationView>
-
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -30,13 +19,14 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     </android.support.v7.widget.Toolbar>
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
-        app:tabMode="fixed"
+        app:tabMode="scrollable"
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="#584984"
         android:elevation="6dp"
         app:tabTextColor="#d3d3d3"
         app:tabSelectedTextColor="#ffffff"
@@ -50,5 +40,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
-
 </RelativeLayout>

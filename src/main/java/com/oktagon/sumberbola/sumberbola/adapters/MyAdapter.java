@@ -4,6 +4,8 @@ package com.oktagon.sumberbola.sumberbola.adapters;
  * Created by RR_PC on 2/19/2017.
  */
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.oktagon.sumberbola.sumberbola.DetailBerita;
 import com.oktagon.sumberbola.sumberbola.R;
 import com.oktagon.sumberbola.sumberbola.service.AndroidVersion;
 
@@ -19,7 +22,7 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private String[] mDataset;
     private ArrayList<AndroidVersion> android;
-
+    Context context;
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
@@ -61,8 +64,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyAdapter.MyViewHolder holder, int position) {
         holder.mTextView.setText(android.get(position).getName());
-        holder.mDetView.setText(android.get(position).getName());
-        holder.mVerView.setText(android.get(position).getVer());
+        holder.mDetView.setText(android.get(position).getVer());
+        holder.mVerView.setText(android.get(position).getApi());
+        holder.mCardView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(v.getContext(),DetailBerita.class);
+                v.getContext().startActivity(intent);
+                System.out.println("Clicked");
+            }
+        });
     }
 
     @Override

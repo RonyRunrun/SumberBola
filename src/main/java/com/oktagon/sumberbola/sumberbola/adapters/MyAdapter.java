@@ -15,13 +15,14 @@ import android.widget.TextView;
 
 import com.oktagon.sumberbola.sumberbola.DetailBerita;
 import com.oktagon.sumberbola.sumberbola.R;
-import com.oktagon.sumberbola.sumberbola.service.AndroidVersion;
+import com.oktagon.sumberbola.sumberbola.service.PostWp;
 
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private String[] mDataset;
-    private ArrayList<AndroidVersion> android;
+    //private ArrayList<AndroidVersion> android;
+    private ArrayList<PostWp> postWpList;
     Context context;
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -45,8 +46,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(ArrayList<AndroidVersion> android) {
-        this.android = android;
+    public MyAdapter(ArrayList<PostWp> postWpList) {
+        this.postWpList = postWpList;
     }
 
     // Create new views (invoked by the layout manager)
@@ -63,9 +64,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(MyAdapter.MyViewHolder holder, int position) {
-        holder.mTextView.setText(android.get(position).getName());
-        holder.mDetView.setText(android.get(position).getVer());
-        holder.mVerView.setText(android.get(position).getApi());
+        holder.mTextView.setText(postWpList.get(position).getStudentId());
+        holder.mDetView.setText(postWpList.get(position).getStudentName());
+        holder.mVerView.setText(postWpList.get(position).getStudentMarks());
         holder.mCardView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -78,6 +79,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return android.size();
+        return (postWpList == null) ? 0 : postWpList.size();
     }
 }

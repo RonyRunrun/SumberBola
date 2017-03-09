@@ -4,6 +4,7 @@ package com.oktagon.sumberbola.sumberbola.Fragment;
  * Created by RR_PC on 2/19/2017.
  */
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -43,11 +44,12 @@ public class BlankFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadJSON();
+    //    loadJSON();
     }
 
 
     private void loadJSON(){
+        final ProgressDialog loading = ProgressDialog.show(getActivity(),"Memuat Berita","Harap Tunggu Sebentar..",false,false);
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://api.learn2crack.com")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -57,11 +59,14 @@ public class BlankFragment extends Fragment {
         call.enqueue(new Callback<JSONResponse>() {
             @Override
             public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
-
                 JSONResponse jsonResponse = response.body();
+                String ds=jsonResponse.getAndroid().toString();
+                System.out.println(ds);
+                //Log.e("Error",ds);
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
                 adapter = new MyAdapter(data);
                 recyclerView.setAdapter(adapter);
+                loading.dismiss();
             }
 
             @Override
@@ -81,12 +86,14 @@ public class BlankFragment extends Fragment {
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
         recyclerView.setHasFixedSize(true);
-        MyAdapter adapter = new MyAdapter(new ArrayList<AndroidVersion>());
-        recyclerView.setAdapter(adapter);
+        loadJSON();
+//        adapter = new MyAdapter(data);
+//        recyclerView.setAdapter(adapter);
+//        MyAdapter adapter = new MyAdapter(new ArrayList<AndroidVersion>());
+//        recyclerView.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(llm);
-        loadJSON();
         return rootView;
     }
 

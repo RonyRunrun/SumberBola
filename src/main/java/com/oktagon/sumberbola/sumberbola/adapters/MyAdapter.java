@@ -15,13 +15,14 @@ import android.widget.TextView;
 
 import com.oktagon.sumberbola.sumberbola.DetailBerita;
 import com.oktagon.sumberbola.sumberbola.R;
+import com.oktagon.sumberbola.sumberbola.service.AndroidVersion;
 import com.oktagon.sumberbola.sumberbola.service.PostWp;
 
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private String[] mDataset;
-    //private ArrayList<AndroidVersion> android;
+    private ArrayList<AndroidVersion> android;
     private ArrayList<PostWp> postWpList;
     Context context;
     // Provide a reference to the views for each data item

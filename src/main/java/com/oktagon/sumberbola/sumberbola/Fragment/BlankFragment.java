@@ -64,7 +64,7 @@ public class BlankFragment extends Fragment {
                 System.out.println(ds);
                 //Log.e("Error",ds);
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter = new MyAdapter(data);
+//                adapter = new MyAdapter(data);
                 recyclerView.setAdapter(adapter);
                 loading.dismiss();
             }

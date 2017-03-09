@@ -22,7 +22,6 @@ import com.oktagon.sumberbola.sumberbola.service.Post;
 import com.oktagon.sumberbola.sumberbola.service.PostWp;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -65,7 +64,7 @@ public class EditorFragment extends Fragment {
                         String ss = jsonResponse.toString();
                         System.out.println(ss);
                         Log.e("Test", ss);
-                        data = new ArrayList<>(Arrays.asList(jsonResponse));
+                   //     data = new ArrayList<>(Arrays.asList(jsonResponse));
 
             }
 
@@ -87,7 +86,7 @@ public class EditorFragment extends Fragment {
         recyclerView = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
         recyclerView.setHasFixedSize(true);
         loadJSON();
-        adapter = new MyAdapter(data);
+        //adapter = new MyAdapter(data);
         recyclerView.setAdapter(adapter);
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());

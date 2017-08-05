@@ -7,6 +7,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">true</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Dark</item>
+        <item name="actionBarStyle">@color/dots</item>
         <item name="android:icon">@mipmap/sbicon</item>
         <item name="windowNoTitle">true</item>
     </style>

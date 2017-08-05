@@ -1,13 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_recycler_view"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42.5dp"
+        android:id="@+id/rel_sub"
+        android:background="#7d7abcbf"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab"
+            android:text="Coba"
+            android:id="@+id/bt_sub1"
+            android:textSize="12dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#f4f2f2"/>
+
+        <Button
+            android:id="@+id/bt_sub2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_tab"
+            android:text="Inggris"
+            android:layout_toRightOf="@id/bt_sub1"
+            android:layout_marginLeft="5dp"
+            android:textSize="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#f4f2f2"/>
+
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_sub"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#aa54b8df"
+        android:elevation="2dp"
+        android:visibility="gone"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_alignParentTop="true" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#856b9caf">
+        android:id="@+id/swiperefresh"
+        android:layout_below="@id/rel_sub">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_recycler_view"
+        android:layout_below="@+id/rel_sub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#856b9caf"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true">
+
     </android.support.v7.widget.RecyclerView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpagers"
+        android:layout_below="@+id/tab_sub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+
+    <io.github.yuweiguocn.lib.squareloading.SquareLoading
+        android:id="@+id/squareLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#8a5270d6"
+        android:visibility="visible"
+        app:dividerSize="2dp"
+        app:squareColor="@android:color/white"
+        app:squareCorner="2dp"
+        app:squareSize="12dp"
+        app:xCount="4"
+        app:yCount="3" />
 </RelativeLayout>

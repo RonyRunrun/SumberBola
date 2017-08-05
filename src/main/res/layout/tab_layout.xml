@@ -11,7 +11,7 @@
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#584984"
+        android:background="#9c81bf"
         android:elevation="6dp"
         app:tabTextColor="#d3d3d3"
         app:tabSelectedTextColor="#ffffff"

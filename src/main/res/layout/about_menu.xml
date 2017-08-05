@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1d234d">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarab"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="#4476b3"
+        android:elevation="3dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cr_abapp"
+        android:layout_below="@+id/toolbarab"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logo_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/iconutama"
+            android:layout_gravity="left"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginRight="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SumberBola"
+            android:textSize="22dp"
+            android:gravity="center_horizontal"
+            android:textColor="#636363"
+            android:layout_alignBottom="@+id/logo_about"
+            android:layout_toEndOf="@+id/logo_about"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="11dp"
+            android:id="@+id/textView2" />
+
+       <ImageView
+           android:id="@+id/logo_ver"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:srcCompat="@android:drawable/ic_menu_preferences"
+           android:layout_marginLeft="3dp"
+           android:layout_marginRight="3dp"
+           android:layout_below="@+id/logo_about"
+           android:layout_alignStart="@+id/logo_about"
+           android:layout_marginStart="7dp" />
+
+       <TextView
+           android:id="@+id/tv_verapp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Versi App"
+           android:textSize="17dp"
+           android:layout_below="@+id/logo_about"
+           android:layout_alignStart="@+id/textView2" />
+   </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cr_soc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cr_abapp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_fb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fbicon"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_fb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="SumberBola.com"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/iv_ig"
+                android:layout_above="@+id/iv_ig"
+                android:layout_alignTop="@+id/iv_fb" />
+
+            <ImageView
+                android:id="@+id/iv_ig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/igicon"
+                android:layout_below="@+id/iv_fb"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_ig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_alignBottom="@+id/iv_ig"
+                android:gravity="center"
+                android:layout_toRightOf="@+id/iv_ig"
+                android:layout_toEndOf="@+id/iv_ig"
+                android:layout_alignTop="@+id/iv_ig" />
+
+            <ImageView
+                android:id="@+id/iv_tw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/twiticon"
+                android:layout_below="@+id/iv_ig"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_tw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:layout_toEndOf="@+id/iv_tw"
+                android:layout_alignTop="@+id/iv_tw"
+                android:layout_alignBottom="@+id/iv_tw" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cr_soc"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mailicon"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info@sumberbola.com"
+            android:textSize="18dp"
+            android:layout_toRightOf="@id/iv_mail"
+            android:layout_toEndOf="@id/iv_mail"
+            android:layout_alignBottom="@id/iv_mail"
+            android:layout_alignTop="@id/iv_mail"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/iv_telp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/telpicon"
+            android:layout_below="@id/iv_mail"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+6221 – 22553283"
+            android:textSize="18dp"
+            android:layout_toRightOf="@id/iv_telp"
+            android:layout_toEndOf="@id/iv_telp"
+            android:layout_alignBottom="@id/iv_telp"
+            android:layout_alignTop="@id/iv_telp"
+            android:gravity="center"/>
+
+</RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
